@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tab Switcher</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white text-black flex items-center justify-center min-h-screen">
+  <div class="w-full max-w-md border p-6 rounded shadow">
+    <div class="flex border-b mb-4">
+      <button onclick="showTab(1)" class="px-4 py-2 border-r">Tab 1</button>
+      <button onclick="showTab(2)" class="px-4 py-2">Tab 2</button>
+    </div>
+
+    <div id="tab1" class="tab">This is the first tab.</div>
+    <div id="tab2" class="tab hidden">This is the second tab.</div>
+  </div>
+
+  <script>
+    function showTab(tabNumber) {
+      document.getElementById("tab1").classList.toggle("hidden", tabNumber !== 1);
+      document.getElementById("tab2").classList.toggle("hidden", tabNumber !== 2);
+    }
+  </script>
+</body>
+</html>
